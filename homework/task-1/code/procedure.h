@@ -24,6 +24,6 @@ void Out(procedure &p, std::ofstream &ofst);
 
 // Вычисление частного от деления года создания на количество
 // символов в названии (действительное число)
-double EvaluateUseless(procedure &p);
+double YearDividedByNameLength(procedure &p);
 
 #endif //__procedure__

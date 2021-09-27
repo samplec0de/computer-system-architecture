@@ -34,6 +34,6 @@ void Out(language &s, std::ofstream &ofst);
 
 // Вычисление частного от деления года создания на количество
 // символов в названии (действительное число)
-double EvaluateUseless(language &s);
+double YearDividedByNameLength(language &s);
 
 #endif
