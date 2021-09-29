@@ -25,7 +25,7 @@ void InRnd(procedure &p) {
 // Вывод параметров процедурного ЯП в форматируемый поток
 void Out(procedure &p, std::ofstream &ofst) {
     ofst << "It is Procedure language: name = "
-         << p.name << "(" << p.tiobeRating << "% | " << p.releaseYear <<
+         << p.name << " (" << p.tiobeRating << "% | " << p.releaseYear <<
          "), abstract types support = " <<
          (p.supportAbstractTypes ? "true" : "false") <<
          ". year / name.size() = " << YearDividedByNameLength(p) << "\n";

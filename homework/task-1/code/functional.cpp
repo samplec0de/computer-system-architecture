@@ -32,10 +32,10 @@ void InRnd(functional &f) {
 // Вывод параметров процедурного ЯП в форматируемый поток
 void Out(functional &f, std::ofstream &ofst) {
     ofst << "It is Functional language: name = "
-         << f.name << "(" << f.tiobeRating << "% | " << f.releaseYear <<
+         << f.name << " (" << f.tiobeRating << "% | " << f.releaseYear <<
          "), typing = " <<
          (f.t ? "DYNAMIC" : "STATIC") <<
-         "lazy calculations = " << (f.supportLazyCalculations ? "true" : "false") <<
+         "бlazy calculations = " << (f.supportLazyCalculations ? "true" : "false") <<
          ". year / name.size() = " << YearDividedByNameLength(f) << "\n";
 }
 

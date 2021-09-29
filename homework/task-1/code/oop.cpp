@@ -42,7 +42,7 @@ void InRnd(oop &o) {
 // Вывод параметров объектно-ориентированного ЯП в форматируемый поток
 void Out(oop &o, std::ofstream &ofst) {
     ofst << "It is Object-oriented language: name = "
-         << o.name << "(" << o.tiobeRating << "% | " << o.releaseYear <<
+         << o.name << " (" << o.tiobeRating << "% | " << o.releaseYear <<
          "), inheritance = " <<
          (o.inhType == 0 ? "SINGLE" : (o.inhType == 1 ? "MULTIPLE" : "INTERFACE")) <<
          ". year / name.size() = " << YearDividedByNameLength(o) << "\n";
