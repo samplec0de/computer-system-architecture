@@ -48,3 +48,21 @@ void Out(container &c, std::ofstream &ofst) {
         Out(*(c.cont[i]), ofst);
     }
 }
+
+// Сортировка контейнера методом Straight Selection
+void sort(container &c) {
+    int i = 0, j, k;
+    language *temp;
+    while (i < c.len) {
+        k = i;
+        for (j = i + 1; j < c.len; j++) {
+            if (YearDividedByNameLength(*c.cont[j]) > YearDividedByNameLength(*c.cont[k])) {
+                k = j;
+            }
+        }
+        temp = c.cont[i];
+        c.cont[i] = c.cont[k];
+        c.cont[k] = temp;
+        i++;
+    }
+}
