@@ -35,7 +35,7 @@ void Out(functional &f, std::ofstream &ofst) {
          << f.name << " (" << f.tiobeRating << "% | " << f.releaseYear <<
          "), typing = " <<
          (f.t ? "DYNAMIC" : "STATIC") <<
-         "бlazy calculations = " << (f.supportLazyCalculations ? "true" : "false") <<
+         ", lazy calculations = " << (f.supportLazyCalculations ? "true" : "false") <<
          ". year / name.size() = " << YearDividedByNameLength(f) << "\n";
 }
 
