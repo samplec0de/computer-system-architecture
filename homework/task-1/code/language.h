@@ -5,6 +5,8 @@
 // programming_language.h - содержит описание обобщающего языка программирования (ЯП),
 //------------------------------------------------------------------------------
 
+#include <iostream>
+
 #include "procedure.h"
 #include "oop.h"
 #include "functional.h"
