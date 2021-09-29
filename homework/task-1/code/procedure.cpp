@@ -15,6 +15,7 @@ void InRnd(procedure &p) {
     for (size_t i = 0; i < MAX_NAME_LEN; ++i) {
         p.name[i] = char('a' + Random());
     }
+    p.name[MAX_NAME_LEN - 1] = '\0';
     p.tiobeRating = Random() + Random() / 100.0;
     p.releaseYear = MIN_YEAR + Random();
     p.supportAbstractTypes = Random() % 2;

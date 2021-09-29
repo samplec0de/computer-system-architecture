@@ -25,6 +25,7 @@ void InRnd(oop &o) {
     for (size_t i = 0; i < MAX_NAME_LEN; ++i) {
         o.name[i] = char('a' + Random());
     }
+    o.name[MAX_NAME_LEN - 1] = '\0';
     o.tiobeRating = Random() + Random() / 100.0;
     o.releaseYear = MIN_YEAR + Random();
     int inheritance = Random() % 3;

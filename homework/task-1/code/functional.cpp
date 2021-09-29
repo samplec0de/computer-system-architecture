@@ -21,6 +21,7 @@ void InRnd(functional &f) {
     for (size_t i = 0; i < MAX_NAME_LEN; ++i) {
         f.name[i] = char('a' + Random());
     }
+    f.name[MAX_NAME_LEN - 1] = '\0';
     f.tiobeRating = Random() + Random() / 100.0;
     f.releaseYear = MIN_YEAR + Random();
     f.t = Random() % 2 ? functional::typing::DYNAMIC : functional::typing::STATIC;
