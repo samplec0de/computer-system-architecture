@@ -68,7 +68,7 @@ int main(int argc, char* argv[]) {
     // The 2nd part of task
     sort(c);
     std::ofstream ofst2(argv[4]);
-    ofst1 << "Sorted container:\n";
+    ofst2 << "Sorted container:\n";
     Out(c, ofst2);
 
     Clear(c);
