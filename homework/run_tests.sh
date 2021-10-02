@@ -1,6 +1,9 @@
 echo "Run help";
 time task-1/code/cmake-build-debug/homework_1;
 
+echo "\nRun test #0"
+time task-1/code/cmake-build-debug/homework_1 -f /Users/andrewmoskalev/CLionProjects/computer-sys-architecture/homework/task-1/tests/test00.txt /Users/andrewmoskalev/CLionProjects/computer-sys-architecture/homework/task-1/tests/out00_1.txt /Users/andrewmoskalev/CLionProjects/computer-sys-architecture/homework/task-1/tests/out00_2.txt
+
 echo "\nRun test #1"
 time task-1/code/cmake-build-debug/homework_1 -f /Users/andrewmoskalev/CLionProjects/computer-sys-architecture/homework/task-1/tests/test01.txt /Users/andrewmoskalev/CLionProjects/computer-sys-architecture/homework/task-1/tests/out01_1.txt /Users/andrewmoskalev/CLionProjects/computer-sys-architecture/homework/task-1/tests/out01_2.txt
 

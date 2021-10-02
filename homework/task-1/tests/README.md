@@ -1,60 +1,46 @@
 # Результаты тестирования
-./run_tests.sh   
-Run help
-incorrect command line!
-Waited:
-command -f infile outfile01 outfile02
-Or:
-command -n number outfile01 outfile02
+./run_tests.sh
 
-real	0m0.004s
-user	0m0.001s
-sys	0m0.001s
-
-Run test #1
+Run test #0
 Start
 Stop
 
-real	0m0.003s
-user	0m0.001s
-sys	0m0.001s
+real	0m0.003s <br>
+user	0m0.001s <br>
+sys	0m0.001s <br>
 
-Run test #2
-Start
-Stop
+Run test #1 <br>
 
-real	0m0.003s
-user	0m0.001s
-sys	0m0.001s
+real	0m0.003s <br>
+user	0m0.001s <br>
+sys	0m0.001s <br>
 
-Run test #3
-Start
-Stop
+Run test #2 <br>
 
-real	0m0.003s
-user	0m0.001s
-sys	0m0.001s
+real	0m0.003s <br>
+user	0m0.001s <br>
+sys	0m0.001s <br>
 
-Run test #4
-Start
-Stop
+Run test #3 <br>
 
-real	0m0.003s
-user	0m0.001s
-sys	0m0.001s
+real	0m0.003s <br>
+user	0m0.001s <br>
+sys	0m0.001s <br>
 
-Run test #5
-Start
-Stop
+Run test #4 <br>
 
-real	0m0.004s
-user	0m0.001s
-sys	0m0.001s
+real	0m0.003s <br>
+user	0m0.001s <br>
+sys	0m0.001s <br>
 
-Run test #6 (random)
-Start
-Stop
+Run test #5 <br>
 
-real	0m1.173s
-user	0m1.163s
-sys	0m0.008s
+real	0m0.004s <br>
+user	0m0.001s <br>
+sys	0m0.001s <br>
+
+Run test #6 (random) <br>
+
+real	0m1.173s <br>
+user	0m1.163s <br>
+sys	0m0.008s <br>
