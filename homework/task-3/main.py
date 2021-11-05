@@ -1,7 +1,7 @@
 import sys
 from pathlib import Path
 
-from container import Container
+from lang_tool.container import Container
 
 if __name__ == '__main__':
     args = sys.argv

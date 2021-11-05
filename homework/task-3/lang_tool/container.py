@@ -1,9 +1,8 @@
 from pathlib import Path
 from typing import Optional, Union, List
 
-from languages.functional import FunctionalLanguage
-from languages.base import BaseLanguage
-from common import NotEnoughTokensError
+from lang_tool.languages.functional import FunctionalLanguage
+from lang_tool.common.exceptions import NotEnoughTokensError
 
 
 class Container:

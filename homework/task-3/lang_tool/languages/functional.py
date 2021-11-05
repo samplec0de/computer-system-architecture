@@ -1,8 +1,8 @@
 from enum import Enum
 from typing import List, Optional
 
-from .base import BaseLanguage
-from common import NotEnoughTokensError, TooManyTokensError
+from lang_tool.languages.base import BaseLanguage
+from lang_tool.common.exceptions import NotEnoughTokensError, TooManyTokensError
 
 
 class Typing(Enum):
