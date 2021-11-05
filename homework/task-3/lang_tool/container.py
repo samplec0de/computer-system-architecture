@@ -1,4 +1,5 @@
 import random
+import time
 from abc import ABC
 from collections import Sequence
 from pathlib import Path
@@ -20,9 +21,12 @@ class Container(Sequence, ABC):
                 language = self.language_from_line(line)
                 self.languages.append(language)
         elif n_random:
+            if type(n_random) == str:
+                n_random = int(n_random)
             for _ in range(n_random):
                 language = self.random_language()
                 self.languages.append(language)
+        self.start_time = time.time()
 
     def __len__(self):
         return len(self.languages)
