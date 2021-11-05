@@ -1,10 +1,7 @@
 import sys
 from pathlib import Path
-from languages.base import BaseLanguage
 
 if __name__ == '__main__':
-    lang = BaseLanguage()
-    lang.fill_randomly()
     args = sys.argv
     if len(args) == 1 or args[1] not in ['-n', '-f']:
         print("Usage:\n"
