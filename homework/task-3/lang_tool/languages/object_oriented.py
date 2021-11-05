@@ -19,7 +19,7 @@ class ObjectOrientedLanguage(BaseLanguage):
 
     def __repr__(self):
         return f"It is Object-oriented language: name = {self.name} ({self.rating}% | {self.year_created}), " \
-               f"inheritance = {self.inheritance.name}. year / name.size() = {self.year_div_name_len}"
+               f"inheritance = {self.inheritance.name}. year / name.size() = {self.year_div_name_len:.3f}"
 
     @property
     def inheritance(self):

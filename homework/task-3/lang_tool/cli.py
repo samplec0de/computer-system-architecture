@@ -37,8 +37,14 @@ if __name__ == '__main__':
                 # из файла
                 try:
                     container = Container(in_file)
+                    with open(out_file, 'w') as out:
+                        out.write(f"Filled container:\nContainer contains {len(container)} elements.\n")
+                        for i, language in enumerate(container):
+                            out.write(f"{i}: {language}\n")
                 except (ValueError, NotImplementedError, ParseError) as e:
                     print(f"{repr(e)}")
+                except NotADirectoryError as e:
+                    print(f"Error! {e.strerror}: {e.filename}")
             else:
                 print("Input file does not exist")
         else:

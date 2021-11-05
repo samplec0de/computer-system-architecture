@@ -1,4 +1,6 @@
 import random
+from abc import ABC
+from collections import Sequence
 from pathlib import Path
 from typing import Optional, Union, List
 
@@ -9,7 +11,7 @@ from lang_tool.languages.procedure import ProcedureLanguage
 from lang_tool.languages.types import LanguageType
 
 
-class Container:
+class Container(Sequence, ABC):
     """Класс контейнера ЯП"""
     def __init__(self, filename: Optional[str] = None, n_random: Optional[int] = None):
         self.languages: List[Union[FunctionalLanguage]] = []
@@ -21,6 +23,12 @@ class Container:
             for _ in range(n_random):
                 language = self.random_language()
                 self.languages.append(language)
+
+    def __len__(self):
+        return len(self.languages)
+
+    def __getitem__(self, item):
+        return self.languages[item]
 
     @staticmethod
     def random_language() -> Union[FunctionalLanguage, ProcedureLanguage, ObjectOrientedLanguage]:
@@ -65,3 +73,13 @@ class Container:
         language.year_created = tokens[3]
         language.fill_from_tokens(tokens=tokens[4:])
         return language
+
+    def sort(self):
+        """Сортирует контейнер по значению функции деления года на длину имени"""
+        i = 0
+        while i < len(self.languages):
+            k = i
+            for j in range(i + 1, len(self.languages)):
+                if self.languages[j].year_div_name_len > self.languages[k].year_div_name_len:
+                    k = j
+            self.languages[i], self.languages[k] = self.languages[k], self.languages[i]

@@ -20,7 +20,7 @@ class FunctionalLanguage(BaseLanguage):
     def __repr__(self):
         return f"It is Functional language: name = {self.name} ({self.rating}% | {self.year_created}), " \
                f"typing = {self.typing.name}, lazy calculations = {str(self.support_lazy_calculations).lower()}. " \
-               f"year / name.size() = {self.year_div_name_len}"
+               f"year / name.size() = {self.year_div_name_len:.3f}"
 
     @property
     def typing(self):

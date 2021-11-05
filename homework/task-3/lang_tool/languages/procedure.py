@@ -13,7 +13,7 @@ class ProcedureLanguage(BaseLanguage):
     def __repr__(self):
         return f"It is Procedure language: name = {self.name} ({self.rating}% | {self.year_created}), " \
                f"abstract types support = {str(self.support_abstract_types).lower()}. " \
-               f"year / name.size() = {self.year_div_name_len}"
+               f"year / name.size() = {self.year_div_name_len:.3f}"
 
     @property
     def support_abstract_types(self):
