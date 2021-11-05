@@ -1,6 +1,7 @@
 import sys
 from pathlib import Path
 
+from lang_tool.common.exceptions import ParseError
 from lang_tool.container import Container
 
 if __name__ == '__main__':
@@ -34,7 +35,10 @@ if __name__ == '__main__':
             out_sorted_file = args[4]
             if Path(in_file).is_file():
                 # из файла
-                container = Container(in_file)
+                try:
+                    container = Container(in_file)
+                except (ValueError, NotImplementedError, ParseError) as e:
+                    print(f"{repr(e)}")
             else:
                 print("Input file does not exist")
         else:

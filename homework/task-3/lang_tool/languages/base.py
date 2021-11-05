@@ -2,13 +2,13 @@ import random
 from string import printable
 from typing import Optional, Union
 
-DEFAULT_LENGHT = 20
+DEFAULT_LENGTH = 20
 
 
-def random_string(length: int = DEFAULT_LENGHT):
+def random_string(length: int = DEFAULT_LENGTH):
     """Случайная строка заданной длины
 
-    :param length: длина строки, по умолчанию DEFAULT_LENGHT=20
+    :param length: длина строки, по умолчанию DEFAULT_LENGTH=20
     """
     result_str = ''.join(random.choice(printable) for _ in range(length))
     return result_str

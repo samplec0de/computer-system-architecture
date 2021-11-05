@@ -16,6 +16,11 @@ class FunctionalLanguage(BaseLanguage):
         self._typing: Optional[Typing] = None
         self._support_lazy_calculations: Optional[bool] = None
 
+    def __repr__(self):
+        return f"It is Functional language: name = {self.name} ({self.rating}% | {self.year_created}), " \
+               f"typing = {self.typing.name}, lazy calculations = {str(self.support_lazy_calculations).lower()}. " \
+               f"year / name.size() = {self.year_div_name_len}"
+
     @property
     def typing(self):
         return self._typing
@@ -41,9 +46,9 @@ class FunctionalLanguage(BaseLanguage):
         """Заполняет информацию о функциональном ЯП
 
         :raises ValueError: при некорректном значении типизации или флага поддержки ленивых вычислений
-        :raises NotEnoughTokensError: при недостаточном количестве токенов
+        :raises NotEnoughTokensError: при недостаточном количестве параметров
                                       (динамическая/статическая типизация, поддержка ленивых вычислений)
-        :raises TooManyTokensError: при наличии лишних токенов помимо двух
+        :raises TooManyTokensError: при наличии лишних параметров помимо двух
                                     (динамическая/статическая типизация, поддержка ленивых вычислений)
         """
         if len(tokens) == 0:

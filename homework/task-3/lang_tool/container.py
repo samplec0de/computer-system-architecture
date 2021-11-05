@@ -3,6 +3,9 @@ from typing import Optional, Union, List
 
 from lang_tool.languages.functional import FunctionalLanguage
 from lang_tool.common.exceptions import NotEnoughTokensError
+from lang_tool.languages.object_oriented import ObjectOrientedLanguage
+from lang_tool.languages.procedure import ProcedureLanguage
+from lang_tool.languages.types import LanguageType
 
 
 class Container:
@@ -31,10 +34,13 @@ class Container:
             raise NotEnoughTokensError("Base language must contain at least 3 tokens: "
                                        "name, TIOBE rating and created year")
         lang_type = tokens[0]
-        if lang_type == 'functional':
+        language = None
+        if LanguageType(lang_type) == LanguageType.FUNCTIONAL:
             language = FunctionalLanguage()
-        else:
-            raise NotImplementedError(f"Language type {lang_type} incorrect")
+        elif LanguageType(lang_type) == LanguageType.PROCEDURE:
+            language = ProcedureLanguage()
+        elif LanguageType(lang_type) == LanguageType.OBJECT_ORIENTED:
+            language = ObjectOrientedLanguage()
         language.name = tokens[1]
         language.rating = tokens[2]
         language.year_created = tokens[3]
