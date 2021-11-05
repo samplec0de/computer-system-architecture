@@ -83,3 +83,4 @@ class Container(Sequence, ABC):
                 if self.languages[j].year_div_name_len > self.languages[k].year_div_name_len:
                     k = j
             self.languages[i], self.languages[k] = self.languages[k], self.languages[i]
+            i += 1

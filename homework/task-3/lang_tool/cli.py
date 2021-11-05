@@ -41,6 +41,11 @@ if __name__ == '__main__':
                         out.write(f"Filled container:\nContainer contains {len(container)} elements.\n")
                         for i, language in enumerate(container):
                             out.write(f"{i}: {language}\n")
+                    container.sort()
+                    with open(out_sorted_file, 'w') as out:
+                        out.write(f"Sorted container:\nContainer contains {len(container)} elements.\n")
+                        for i, language in enumerate(container):
+                            out.write(f"{i}: {language}\n")
                 except (ValueError, NotImplementedError, ParseError) as e:
                     print(f"{repr(e)}")
                 except NotADirectoryError as e:
