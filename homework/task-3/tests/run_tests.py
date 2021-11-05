@@ -8,15 +8,15 @@ def run_test(num: int):
     """Запускает тест тum"""
     command = [
         'python3', '-m', 'lang_tool.cli',
-        '-f', f'data/test_{num}/input.txt',
-        f'data/test_{num}/output_1.txt', f'data/test_{num}/output_2.txt'
+        '-f', f'tests/data/test_{num}/input.txt',
+        f'tests/data/test_{num}/output_1.txt', f'tests/data/test_{num}/output_2.txt'
     ]
     if num == -1:
         # random
         command = [
         'python3', '-m', 'lang_tool.cli',
         '-n', f'10000',
-        f'data/test_rnd/output_1.txt', f'data/test_rnd/output_2.txt'
+        f'tests/data/test_rnd/output_1.txt', f'tests/data/test_rnd/output_2.txt'
     ]
     p = subprocess.Popen(command, stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
     output = p.communicate()[0].decode('utf-8').split('\n')
@@ -43,6 +43,7 @@ def run_test_x_times(test_num: int, times: int = RUN_EACH_TEST_TIMES):
 
 if __name__ == '__main__':
     test_results = "# Результаты тестирования\n\n"
+    test_results += "**Запуск**: `cd homework/task-3 && python3 tests/run_tests.py`\n\n"
     for test in list(range(TESTS_COUNT)) + [-1]:
         result = run_test_x_times(test)
         if test == -1:
@@ -51,4 +52,4 @@ if __name__ == '__main__':
         for key, value in result.items():
             test_results += f"{key}: `{value:10f}s`<br>\n"
         test_results += "\n\n"
-    print(test_results, file=open("README.md", "w"))
+    print(test_results, file=open("tests/README.md", "w"))
