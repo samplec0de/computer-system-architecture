@@ -1,3 +1,4 @@
+import random
 from typing import List, Optional
 
 from lang_tool.languages.base import BaseLanguage
@@ -26,6 +27,10 @@ class ProcedureLanguage(BaseLanguage):
             self._support_abstract_types = True
         else:
             raise ValueError(f"Abstract types support expected to be 0 or 1, but \"{value}\" is not")
+
+    def fill_randomly(self):
+        super().fill_randomly()
+        self._support_abstract_types = bool(random.randint(0, 1))
 
     def fill_from_tokens(self, tokens: List[str]):
         """Заполняет информацию о процедурном ЯП

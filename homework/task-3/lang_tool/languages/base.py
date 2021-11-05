@@ -1,8 +1,12 @@
 import random
-from string import printable
+from string import hexdigits
 from typing import Optional, Union
 
 DEFAULT_LENGTH = 20
+MIN_YEAR = 1970
+MAX_YEAR = 5999
+MIN_RATING = 0
+MAX_RATING = 25
 
 
 def random_string(length: int = DEFAULT_LENGTH):
@@ -10,7 +14,7 @@ def random_string(length: int = DEFAULT_LENGTH):
 
     :param length: длина строки, по умолчанию DEFAULT_LENGTH=20
     """
-    result_str = ''.join(random.choice(printable) for _ in range(length))
+    result_str = ''.join(random.choice(hexdigits) for _ in range(length))
     return result_str
 
 
@@ -81,3 +85,5 @@ class BaseLanguage:
     def fill_randomly(self):
         """Рандомное заполнение информации о ЯП"""
         self.name = random_string()
+        self._year_created = random.randint(MIN_YEAR, MAX_YEAR)
+        self._rating = random.randrange(MIN_RATING, MAX_RATING)

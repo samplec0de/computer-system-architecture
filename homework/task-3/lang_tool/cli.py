@@ -21,7 +21,7 @@ if __name__ == '__main__':
                 print("Count of elements (-n value) must be integer")
             else:
                 # рандомно
-                pass
+                container = Container(n_random=int(cnt))
         else:
             print("In random generator mode, use\n"
                   "    python3 -m lang_tool.cli -n <integer::count of elements> "

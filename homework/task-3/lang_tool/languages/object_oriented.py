@@ -1,3 +1,4 @@
+import random
 from enum import Enum
 from typing import List, Optional
 
@@ -27,6 +28,10 @@ class ObjectOrientedLanguage(BaseLanguage):
     @inheritance.setter
     def inheritance(self, value):
         self._inheritance = Inheritance(value)
+
+    def fill_randomly(self):
+        super().fill_randomly()
+        self._inheritance = random.choice([Inheritance.SINGLE, Inheritance.MULTIPLE, Inheritance.INTERFACE])
 
     def fill_from_tokens(self, tokens: List[str]):
         """Заполняет информацию о процедурном ЯП

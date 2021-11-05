@@ -1,3 +1,4 @@
+import random
 from pathlib import Path
 from typing import Optional, Union, List
 
@@ -16,9 +17,27 @@ class Container:
             for line in Path(filename).read_text().splitlines():
                 language = self.language_from_line(line)
                 self.languages.append(language)
+        elif n_random:
+            for _ in range(n_random):
+                language = self.random_language()
+                self.languages.append(language)
 
     @staticmethod
-    def language_from_line(line: str) -> Union[FunctionalLanguage]:
+    def random_language() -> Union[FunctionalLanguage, ProcedureLanguage, ObjectOrientedLanguage]:
+        """Генерация случайного ЯП"""
+        lang_type = random.choice([item.value for item in LanguageType])
+        language = None
+        if LanguageType(lang_type) == LanguageType.FUNCTIONAL:
+            language = FunctionalLanguage()
+        elif LanguageType(lang_type) == LanguageType.PROCEDURE:
+            language = ProcedureLanguage()
+        elif LanguageType(lang_type) == LanguageType.OBJECT_ORIENTED:
+            language = ObjectOrientedLanguage()
+        language.fill_randomly()
+        return language
+
+    @staticmethod
+    def language_from_line(line: str) -> Union[FunctionalLanguage, ProcedureLanguage, ObjectOrientedLanguage]:
         """Ввод ЯП из строки с его описанием
 
         :param line: строка с описанием ЯП

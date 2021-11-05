@@ -1,3 +1,4 @@
+import random
 from enum import Enum
 from typing import List, Optional
 
@@ -41,6 +42,11 @@ class FunctionalLanguage(BaseLanguage):
             self._support_lazy_calculations = True
         else:
             raise ValueError(f"Lazy calculations support expected to be 0 or 1, but \"{value}\" is not")
+
+    def fill_randomly(self):
+        super().fill_randomly()
+        self._typing = random.choice([Typing.STRICT, Typing.DYNAMIC])
+        self._support_lazy_calculations = bool(random.randint(0, 1))
 
     def fill_from_tokens(self, tokens: List[str]):
         """Заполняет информацию о функциональном ЯП
