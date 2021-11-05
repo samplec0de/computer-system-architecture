@@ -7,9 +7,10 @@ if __name__ == '__main__':
     args = sys.argv
     if len(args) == 1 or args[1] not in ['-n', '-f']:
         print("Usage:\n"
-              "    python3 main.py -n <integer::count of elements> <str::output file> <str::output sorted file>\n"
+              "    python3 -m lang_tool.cli -n <integer::count of elements> "
+              "<str::output file> <str::output sorted file>\n"
               "or\n"
-              "    python3 main.py -f <str::input file> <str::output file> <str::output sorted file>\n")
+              "    python3 -m lang_tool.cli -f <str::input file> <str::output file> <str::output sorted file>\n")
     elif args[1] == '-n':
         if len(args) == 5:
             cnt = args[2]
@@ -22,9 +23,10 @@ if __name__ == '__main__':
                 pass
         else:
             print("In random generator mode, use\n"
-                  "    python3 main.py -n <integer::count of elements> <str::output file> <str::output sorted file>\n"
+                  "    python3 -m lang_tool.cli -n <integer::count of elements> "
+                  "<str::output file> <str::output sorted file>\n"
                   "Example:\n"
-                  "    python3 main.py -n 1000 outrnd_1.txt outrnd_2.txt")
+                  "    python3 -m lang_tool.cli -n 1000 outrnd_1.txt outrnd_2.txt")
     elif args[1] == '-f':
         if len(args) == 5:
             in_file = args[2]
@@ -37,6 +39,6 @@ if __name__ == '__main__':
                 print("Input file does not exist")
         else:
             print("In file input mode, use\n"
-                  "    python3 main.py -f <str::input file> <str::output file> <str::output sorted file>\n"
+                  "    python3 cli.py -f <str::input file> <str::output file> <str::output sorted file>\n"
                   "Example:\n"
-                  "    python3 main.py -f in.txt out_1.txt out_2.txt")
+                  "    python3 cli.py -f in.txt out_1.txt out_2.txt")
