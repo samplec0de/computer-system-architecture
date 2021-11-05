@@ -6,5 +6,5 @@ class NotEnoughTokensError(ParseError):
     pass
 
 
-class IncorrectTypeError(ParseError):
+class TooManyTokensError(ParseError):
     pass

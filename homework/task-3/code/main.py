@@ -1,6 +1,8 @@
 import sys
 from pathlib import Path
 
+from container import Container
+
 if __name__ == '__main__':
     args = sys.argv
     if len(args) == 1 or args[1] not in ['-n', '-f']:
@@ -30,7 +32,7 @@ if __name__ == '__main__':
             out_sorted_file = args[4]
             if Path(in_file).is_file():
                 # из файла
-                pass
+                container = Container(in_file)
             else:
                 print("Input file does not exist")
         else:
