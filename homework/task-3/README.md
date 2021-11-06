@@ -10,3 +10,10 @@
 
 Запуск из папки `homework/task-3/lang_tool` приведет к ошибке, так как
 lang_tool является модулем
+
+## Тесты
+Запуск производить из папки `homework/task-3`<br>
+`python3 tests/run_tests.py` <br>
+Решение на каждом тесте прогоняется несколько раз,
+усредненный результат записывается в <br>
+`homework/task-3/tests/README.md`
